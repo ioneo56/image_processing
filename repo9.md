@@ -39,3 +39,6 @@ imagesc(IMG); colormap(gray); colorbar; % 画像の表示
 ![原画像](https://github.com/ioneo56/image_processing/blob/master/imgsrc/9-4.png?raw=true) 
 図4 メディアンフィルタ
 
+今回の画像では平滑化フィルタではノイズが薄くなるが全体的に色がノイズの色によって明るくなっている.
+メディアンフィルタではノイズがほとんど目立たず全体の色の変化も小さい。
+メディアンフィルタはこのような粒子の小さいノイズに対して有効であることがわかる。
