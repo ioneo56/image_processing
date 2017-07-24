@@ -1,7 +1,6 @@
 # 課題8レポート
 sample.pngを原画像とする．
 
-画像のエッジ抽出 
 ORG=imread('sample.png'); % 原画像の入力  
 ORG = rgb2gray(ORG); %カラーからグレイへの変換
 imagesc(ORG); colormap('gray'); colorbar; % 画像の表示
@@ -29,3 +28,5 @@ imagesc(IMG); colormap(jet); colorbar; % 画像の表示
 
 ![原画像](https://github.com/ioneo56/image_processing/blob/master/imgsrc/8-3.png?raw=true) 
 図3 ラベル付け結果
+
+8連結オブジェクトをラベル付けした。
