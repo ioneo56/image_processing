@@ -1,5 +1,5 @@
 # 課題10レポート
-sample.pngを原画像とする．この画像は縦800画像，横800画素による正方形のディジタルカラー画像である．
+sample.pngを原画像とする．
 
 画像のエッジ抽出 
 ORG=imread('sample.png'); % 原画像の入力  
@@ -16,6 +16,7 @@ imagesc(ORG); colormap('gray'); colorbar; % 画像の表示
 
 １．プレウィット法
 IMG = edge(ORG,'prewitt'); エッジ抽出（プレウィット法）
+imagesc(IMG); colormap('gray'); colorbar;% 画像表示
 
 エッジ抽出の結果の結果を図２に示す．
 
@@ -24,6 +25,7 @@ IMG = edge(ORG,'prewitt'); エッジ抽出（プレウィット法）
 
 2．ソベル法
 IMG = edge(ORG,'sobel'); エッジ抽出（ソベル法）
+imagesc(IMG); colormap('gray'); colorbar;% 画像表示
 
 エッジ抽出の結果の結果を図２に示す．
 
@@ -32,6 +34,7 @@ IMG = edge(ORG,'sobel'); エッジ抽出（ソベル法）
 
 3．キャニー法
 IMG = edge(ORG,'canny'); エッジ抽出（キャニー法）
+imagesc(IMG); colormap('gray'); colorbar;% 画像表示
 
 エッジ抽出の結果の結果を図２に示す．
 
