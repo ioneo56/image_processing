@@ -8,7 +8,7 @@ imagesc(ORG); colormap('gray'); colorbar; % 画像の表示
 
 によって，原画像を読み込み，グレースケールにした結果を図１に示す．
 
-![原画像](https://github.com/ioneo56/image_processing/blob/master/imgsrc/1-10.png?raw=true)  
+![原画像](https://github.com/ioneo56/image_processing/blob/master/imgsrc/10-1.png?raw=true)  
 図1 原画像（グレースケール）
 
 この画像に各種のエッジ抽出アルゴリズムを適用した。
