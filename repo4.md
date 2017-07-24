@@ -17,3 +17,6 @@ imhist(ORG); % ヒストグラムの表示
 
 ![原画像](https://github.com/ioneo56/image_processing/blob/master/imgsrc/4-2.png?raw=true) 
 図2 ヒストグラム
+
+透過PNGのため読み込み時に背景が黒となりヒストグラムで0の成分が非常に多くなった。
+また、イラストなので完全な白の部分も多いことがわかる。
