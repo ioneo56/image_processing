@@ -40,3 +40,6 @@ imagesc(IMG); colormap('gray'); colorbar;% 画像表示
 
 ![原画像](https://github.com/ioneo56/image_processing/blob/master/imgsrc/10-4.png?raw=true)
 図4 キャニー法
+
+この画像ではプレウィット法とソベル法ではあまり差が見られなかった。
+キャニー法ではほかの方法に比べて細かい部分まで輪郭が抽出できた。

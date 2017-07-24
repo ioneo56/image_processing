@@ -23,9 +23,9 @@ imagesc(IMG); colormap(gray); colorbar; % 画像の表示
 
 この画像にラベルを付けた.
 
-IMG = bwlabeln(IMG);
+IMG = bwlabeln(IMG);%バイナリ イメージ内の連結要素をラベル付け
 imagesc(IMG); colormap(jet); colorbar; % 画像の表示
 結果を図２に示す．
 
 ![原画像](https://github.com/ioneo56/image_processing/blob/master/imgsrc/8-3.png?raw=true) 
-図3 ラベル
+図3 ラベル付け結果
