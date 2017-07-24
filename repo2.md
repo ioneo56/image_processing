@@ -1,48 +1,44 @@
 # 課題１レポート
 sample.pngを原画像とする．この画像は縦800画像，横800画素による正方形のディジタルカラー画像である．
 
-ORG=imread('Lenna.png'); % 原画像の入力  
+ORG=imread('sample.png'); % 原画像の入力  
 imagesc(ORG); axis image; % 画像の表示
 
 によって，原画像を読み込み，表示した結果を図１に示す．
 
-![原画像](https://github.com/ioneo56/image_processing/blob/master/imgsrc/1-1.png?raw=true)  
+![原画像](https://github.com/ioneo56/image_processing/blob/master/imgsrc/2-1.png?raw=true)  
 図1 原画像
 
-原画像を1/2サンプリングするには，画像を1/2倍に縮小した後，2倍に拡大すればよい．なお，拡大する際には，単純補間するために「box」オプションを設定する．
+原画像を閾値128で２値化する．
 
-IMG = imresize(ORG,0.5); % 画像の縮小  
-IMG2 = imresize(IMG,2,'box'); % 画像の拡大
+IMG = ORG>128;
+imagesc(IMG); colormap(gray); colorbar;  axis image;
+結果を図２に示す．
 
-1/2サンプリングの結果を図２に示す．
+![原画像](https://github.com/ioneo56/image_processing/blob/master/imgsrc/2-2.png?raw=true)  
+図2 ２階調画像
 
-![原画像](https://github.com/ioneo56/image_processing/blob/master/imgsrc/1-2.png?raw=true)  
-図2 1/2サンプリング
+4階調化するには，閾値64,128,192で２値化した画像を加算すればよい.すなわち，
+IMG0 = ORG>64;
+IMG1 = ORG>192;
+IMG = IMG + IMG0 + IMG1;%４値画像化（0~1000）
+imagesc(IMG); colormap(gray); colorbar;  axis image;
+とする．結果を図３に示す．
 
-同様に原画像を1/4サンプリングするには，画像を1/2倍に縮小した後，2倍に拡大すればよい．すなわち，
+![原画像](https://github.com/ioneo56/image_processing/blob/master/imgsrc/2-3.png?raw=true)  
+図3 4階調画像
 
-IMG = imresize(ORG,0.5); % 画像の縮小  
-IMG2 = imresize(IMG,2,'box'); % 画像の拡大
+同様に8値の場合も
+IMG2 = ORG>32;
+IMG3 = ORG>96;
+IMG4 = ORG>160;
+IMG5 = ORG>224;
+IMG = IMG + IMG2 + IMG3 + IMG4 + IMG5;
+imagesc(IMG); colormap(gray); colorbar;  axis image;
+とする。
+結果を図４に示す．
 
-とする．1/4サンプリングの結果を図３に示す．
+![原画像](https://github.com/ioneo56/image_processing/blob/master/imgsrc/2-4.png?raw=true)   
+図4 8階調画像
 
-![原画像](https://github.com/ioneo56/image_processing/blob/master/imgsrc/1-3.png?raw=true)  
-図3 1/4サンプリング
-
-1/8から1/32サンプリングは，
-
-IMG = imresize(ORG,0.5); % 画像の縮小  
-IMG2 = imresize(IMG,2,'box'); % 画像の拡大
-
-を繰り返す．サンプリングの結果を図４～６に示す．
-
-![原画像](https://github.com/ioneo56/image_processing/blob/master/imgsrc/1-4.png?raw=true)   
-図4 1/8サンプリング
-
-![原画像](https://github.com/ioneo56/image_processing/blob/master/imgsrc/1-5.png?raw=true)  
-図5 1/16サンプリング
-
-![原画像](https://github.com/ioneo56/image_processing/blob/master/imgsrc/1-6.png?raw=true)  
-図6 1/32サンプリング
-
-サンプリング幅が大きくなるにつれ，モザイク状のサンプリング歪みが顕著となった．
+今回はMATLBの機能により必要がなかったが実際に使う場合は加算後の正規化処理を行ったほうが良い.
