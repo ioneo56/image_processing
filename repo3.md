@@ -32,3 +32,5 @@ imagesc(IMG); colormap(gray); colorbar;
 
 ![原画像](https://github.com/ioneo56/image_processing/blob/master/imgsrc/3-5.png?raw=true)  
 図5 ２値化した画像(閾値192)
+
+閾値を変えることでつぶれてしまう部分が変化するため画像や目的に応じた閾値の設定が重要だとわかる。
