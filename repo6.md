@@ -29,3 +29,5 @@ imagesc(IMG); colormap(gray); colorbar; % 画像の表示
 ![原画像](https://github.com/ioneo56/image_processing/blob/master/imgsrc/6-3.png?raw=true) 
 図3 ディザ法による二値化
 
+ディザ法による二値化では点の密度で階調を表しているため中間の色がつぶれにくい.
+しかし、物を検出する場合などはノイズが多くなる.
